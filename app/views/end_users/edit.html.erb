@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<div class="mypage-title">
+			<h2>プロフィール編集</h2>
+		</div>
+		<div class="sidebar">
+			<h3>設定</h3>
+			<%= link_to unsubscribe_path method: :get do %>
+	  	退会する
+		<% end %>
+		</div>
+		<div class="mypage-profiel">
+			<%= form_for(@customer, url: end_user_path(@customer)) do |f| %>
+				<% if @customer.errors.any? %>
+					<div class="alert alert-warning">
+						<h3><%= @customer.errors.count %>errors prohibited this obj from being saved:</h3>
+							<ul>
+						      <% @customer.errors.full_messages.each do |message| %>
+						       <li><%= message %></li>
+				      		  <% end %>
+				    		</ul>
+		    		</div>
+		    	<% end %>
+		    	<%= f.attachment_field :image, placeholder: "変更" %>
+		    	<p>ニックネーム</p>
+				<%= f.text_field :nickname, autofocus: true %><br>
+				<p>プロフィール（１０００文字以内）</p>
+				<%= f.text_field :profiel %>
+				<%= f.submit "変更を保存する" %>
+
+			<% end %>
+		</div>
+	</div>
+</div>
