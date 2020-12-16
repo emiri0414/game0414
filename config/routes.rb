@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   registrations: 'admins/registrations'
 }
   namespace :admin do
-  get 'games' => 'games/top'
-  resources :games, only: [:index, :new, :create, :show, :edit, :update]
+  get 'top' => 'games/#top'
+  resources :games, only: [:index, :create, :show, :edit, :update]
   resources :genres, only: [:index, :create, :edit, :update]
   resources :years, only: [:index, :create, :edit, :update]
   resources :users, only: [:index, :show, :edit, :update]
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'games' => 'games#genre'
   get 'games' => 'games#year'
   get 'games' => 'games#show'
-  resources :end_users, only: [:show, :edit, :update, :index]
+  resources :end_users, only: [:show, :edit, :update]
   get 'end_users' => 'end_users#unsubscribe', as: 'unsubscribe'
   patch 'end_users' => 'end_users#withdraw', as: 'withdraw'
   resources :reviews, only: [:create, :edit, :update, :destroy]

@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+		<h2>ゲーム新規登録・一覧</h2>
+			<%= form_for(@game, url: admin_games_path, method: :post) do |f| %>
+				<%= f.label :title, 'ゲームタイトル'%>
+				<%= f.text_field :title, class:'form_control' %>
+				<%= f.label :body, '説明' %>
+				<%= f.text_field :body, class:'form_control' %>
+				<%= f.label :year_id, '制作年' %>
+                <%= f.select :year_id, Year.all.map{|o| [o.production_year, o.id]} %>
+				<%= f.label :production_date, '月日' %>
+				<%= f.date_field :production_date, class:'form_control' %>
+				<%= f.label :genre, 'ジャンル' %>
+                <%= f.select :genre_id, Genre.all.map{|o| [o.name, o.id]} %>
+				<%= f.submit '追加' %>
+			<% end %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ゲームタイトル</th>
+					<th>説明</th>
+					<th>制作年</th>
+					<th>制作年月日</th>
+					<th>ジャンル</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @games.each do |game| %>
+				<tr>
+					<td><%= game.title %></td>
+					<td><%= game.body %></td>
+					<td><%= game.year.production_year %></td>
+					<td><%= game.production_date %></td>
+					<td><%= game.genre.name %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

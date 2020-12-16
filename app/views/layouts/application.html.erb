@@ -30,7 +30,7 @@
             <p>ようこそ、<%= current_customer.username %>さん!</p>
             <li><%= link_to 'マイページ', end_user_path(current_customer) %></li>
             <li><%= link_to 'ゲーム', root_path %></li>
-            <li><%= link_to 'ユーザーを探す', end_users_path %></li>
+            <li><%#= link_to 'ユーザーを探す', end_user_path %></li>
             <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %></li>
           </ul>
         </div>

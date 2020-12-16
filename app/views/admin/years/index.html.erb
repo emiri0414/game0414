@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<h2>制作年新規登録・一覧</h2>
+			<%= form_for(@year, url: admin_years_path, method: :post) do |f| %>
+				<%= f.label :production_year, '制作年'%>
+				<%= f.text_field :production_year, class:'form_control' %>
+				<%= f.submit '追加' %>
+			<% end %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>制作年</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @years.each do |year| %>
+				<tr>
+					<td><%= year.production_year %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

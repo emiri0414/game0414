@@ -4,20 +4,11 @@ class EndUsersController < ApplicationController
 	end
 	def edit
 		@customer = Customer.find(params[:id])
-		if @customer == current_customer
-		    render :edit
-		else
-			redirect_to customer_path(@customer)
-		end
 	end
 	def update
 		@customer = Customer.find(params[:id])
-		if @customer.update(customer_params)
-			flash[:notice] = "変更を保存しました"
-			redirect_to customer_path(@customer)
-		else
-			render :edit
-		end
+		@customer.update(customer_params)
+		redirect_to end_user_path(@customer)
 	end
 	def unsubscribe
 		@customer = Customer.find_by(email: params[:email])
@@ -27,8 +18,6 @@ class EndUsersController < ApplicationController
 		@customer.update(is_deleted: true)
 		reset_session
 		redirect_to root_path
-	end
-	def index
 	end
 	private
 	def customer_params

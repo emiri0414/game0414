@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.mypage-title{
+	text-align: center;
+}
+.mypage-profiel{
+	display: flex;
+	margin-left: 200px;
+}
+.mypage-nickname{
+	color: silver
+}
