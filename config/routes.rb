@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :years, only: [:index, :create, :edit, :update]
   resources :users, only: [:index, :show, :edit, :update]
   resources :reviews, only: [:index, :show, :uodate]
+  resources :categories, only: [:index, :create, :edit, :update]
   end
 
   devise_for :customers, controllers: {
@@ -21,11 +22,11 @@ Rails.application.routes.draw do
 }
 
   root 'homes#top'
-  get 'games' => 'games#ps4'
-  get 'games' => 'games#switch'
-  get 'games' => 'games#genre'
-  get 'games' => 'games#year'
-  get 'games' => 'games#show'
+  get 'games/ps4' => 'games#ps4'
+  get 'games/switch' => 'games#switch'
+  get 'games/genre' => 'games#genre'
+  get 'games/year' => 'games#year'
+  get 'games/show' => 'games#show'
   resources :end_users, only: [:show, :edit, :update]
   get 'end_users' => 'end_users#unsubscribe', as: 'unsubscribe'
   patch 'end_users' => 'end_users#withdraw', as: 'withdraw'

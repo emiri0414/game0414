@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<ul class="breadcrumbs">
+				<li></li>
+			</ul>
+			<h2>PS４の新着ランキング</h2>
+			<p>今PS4の新着ランキング。ゲーム作品情報、制作年月日、レビュー・感想・評価をチェックできます。</p>
+		</div>
+		<div class="sidebar">
+			<div class="col-md-3 col-sm-3 col-xs-3">
+				カテゴリーで探す<br>
+				ジャンルで探す<br>
+				制作年で探す<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-3 col-xs-12">
+				<div class="game-main">
+						<div class="game-main-block">
+
+							<div class="game-content">
+
+					        	<div class="game-content-left">
+					        		<% @games.each do |game| %>
+					        		<%= attachment_image_tag game, :image , :full,100,100 %>
+					        	</div>
+						        	<div class="game-content-info">
+						        		<div class="game-content-title">
+						        			<%= game.title %><br>
+						        			制作日：<%= game.production_date %>
+						        			<div class="game-content-review-score">
+						        				レビューstar
+						        			</div>
+						        				<div class="game-content-body">
+						        					説明<br>
+						        					<%= game.body %>
+						        				</div>
+						        		</div>
+						        	</div>
+						        	<% end %>
+						    </div>
+						    	<div class="game-content-review">
+						    		<div class="game-content-review-img">ユーザー画像</div>
+						    		<div class="game-content-review-title">ユーザー名の感想</div>
+						    		<div class="game-content-review-score">★★★★</div>
+						    		<div class="game-content-review-text">めちゃくちゃドキドキしました＞＞続きを読む</div>
+						    	</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

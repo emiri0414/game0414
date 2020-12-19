@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
-	def index
+	def ps4
+		@games = Game.where(category_id: 1).order(production_date: :desc)
+	end
+	def switch
 	end
 	def create
 	end
@@ -8,3 +11,4 @@ class GamesController < ApplicationController
 	def update
 	end
 end
+

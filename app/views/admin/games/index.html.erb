@@ -12,26 +12,33 @@
 				<%= f.date_field :production_date, class:'form_control' %>
 				<%= f.label :genre, 'ジャンル' %>
                 <%= f.select :genre_id, Genre.all.map{|o| [o.name, o.id]} %>
+                <%= f.label :category, 'カテゴリー' %>
+                <%= f.select :category_id, Category.all.map{|o| [o.name, o.id]} %>
+                <%= f.attachment_field :image %>
 				<%= f.submit '追加' %>
 			<% end %>
 		<table class="table">
 			<thead>
 				<tr>
+					<th></th>
 					<th>ゲームタイトル</th>
 					<th>説明</th>
 					<th>制作年</th>
 					<th>制作年月日</th>
 					<th>ジャンル</th>
+					<th>カテゴリー</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @games.each do |game| %>
 				<tr>
+					<td><%= attachment_image_tag game, :image , :fill,100 ,100  %></td>
 					<td><%= game.title %></td>
 					<td><%= game.body %></td>
 					<td><%= game.year.production_year %></td>
 					<td><%= game.production_date %></td>
 					<td><%= game.genre.name %></td>
+					<td><%= game.category.name %></td>
 				</tr>
 				<% end %>
 			</tbody>
