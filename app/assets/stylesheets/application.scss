@@ -15,6 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bulma";
 
 .mypage-title{
 	text-align: center;
@@ -27,4 +28,10 @@
 	color: silver
 }
 
+.game-main{
+	background-color: gray;
+	width: 500px;
+	height: 400px;
+	padding: 10px;
+}
 

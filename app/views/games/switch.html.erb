@@ -1,0 +1,58 @@
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<ul class="breadcrumbs">
+				<li></li>
+			</ul>
+			<h2>Switchの新着ランキング</h2>
+			<p>今Switchの新着ランキング。ゲーム作品情報、制作年月日、レビュー・感想・評価をチェックできます。</p>
+		</div>
+		<div class="sidebar">
+			<div class="col-md-3 col-sm-3 col-xs-3">
+				カテゴリーで探す<br>
+				ジャンルで探す<br>
+				制作年で探す<br>
+			</div>
+		</div>
+		<div class="row">
+			<% @games.each do |game| %>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="game-main">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-12">
+						        	<div class="game-content-left">
+						        		<%= attachment_image_tag game, :image , format: 'jpeg', size: "100x100" %>
+						        	</div>
+							 </div>
+							 <div class="col-md-9">
+						    	<div class="game-content-review">
+						    		<div class="game-content-info">
+							        		<div class="game-content-title">
+							        			<%= game.title %><br>
+							        			制作日：<%= game.production_date %>
+							        			<div class="game-content-review-score">
+							        				レビューstar
+							        			</div>
+							        				<div class="game-content-body">
+							        					説明<br>
+							        					<%= game.body %>
+							        				</div>
+							        		</div>
+							        </div>
+							    </div>
+			<% end %>
+							</div>
+							<div class="game-customer-review">
+									<div class="col-lg-4">
+							    		<div class="game-content-review-img">ユーザー画像</div>
+							    		<div class="game-content-review-title">ユーザー名の感想</div>
+							    		<div class="game-content-review-score">★★★★</div>
+							    		<div class="game-content-review-text">めちゃくちゃドキドキしました＞＞続きを読む</div>
+							    	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
