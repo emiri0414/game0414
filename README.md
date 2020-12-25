@@ -1,24 +1,9 @@
-# README
+## Gamefind
+ゲームのレビュー投稿サイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+・ユーザがレビューを投稿し合うことでゲームのランキングを競い合うことができ、また今人気のゲームを探すことができる。
+・ユーザ同士でフォローし合うことで、好みのユーザから自分が好みとする新しいゲームを見つけることができる。
+・好きなゲームが見つかれば、ゲーム実況が見れたり、すぐに通販サイトで買ったりすることができる
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##
