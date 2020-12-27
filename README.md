@@ -47,4 +47,6 @@
 
 ## ER図
 https://user-images.githubusercontent.com/69104912/103174068-6ddc7b80-48a2-11eb-97b1-04d9ce90be3b.png
+## データベース設計
+https://drive.google.com/file/d/1bfJmXA6_jo6wCxyXIyV01tT5qCiZ2kCw/view?usp=sharing
 
