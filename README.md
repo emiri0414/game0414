@@ -44,3 +44,7 @@
 - Vagrant(2.2.4)
 #### テスト
 - RSpec:△
+
+## ER図
+https://user-images.githubusercontent.com/69104912/103169397-93578e00-487e-11eb-9489-7774a63f83f1.png
+
