@@ -46,5 +46,5 @@
 - RSpec:△
 
 ## ER図
-https://user-images.githubusercontent.com/69104912/103169397-93578e00-487e-11eb-9489-7774a63f83f1.png
+https://user-images.githubusercontent.com/69104912/103174068-6ddc7b80-48a2-11eb-97b1-04d9ce90be3b.png
 
