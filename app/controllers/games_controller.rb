@@ -9,6 +9,7 @@ class GamesController < ApplicationController
 		@games = Game.all
 		@game = Game.find_by(params[:id])
 		@review = Review.new
+		@reviews = @game.reviews
 	end
 	def create
 	end

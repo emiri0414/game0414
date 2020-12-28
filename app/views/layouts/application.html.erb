@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gamilys</title>
+    <title>Gamefind</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/9cbe489f0f.js" crossorigin="anonymous"></script>
   </head>
 
@@ -13,7 +14,7 @@
 <% if admin_signed_in? %>
       <header class="admin_header">
         <div class="header-content">
-          <%= link_to 'Gamilys', admin_top_path, class: "logo" %>
+          <%= link_to 'Gamefind', admin_top_path, class: "logo" %>
           <ul class="flex">
             <li><%= link_to 'ゲーム一覧', admin_games_path %></li>
             <li><%= link_to '会員一覧', admin_users_path %></li>
@@ -25,7 +26,7 @@
       </header>
         <% elsif customer_signed_in? %>
         <div class="header-content">
-          <%= link_to 'Gamilys', root_path, class: "logo" %>
+          <%= link_to 'Gamefind', root_path, class: "logo" %>
           <ul class="flex">
             <p>ようこそ、<%= current_customer.username %>さん!</p>
             <li><%= link_to 'マイページ', end_user_path(current_customer) %></li>
@@ -38,7 +39,7 @@
     <% else %>
     <header>
         <div class="header-content">
-          <%= link_to 'Gamilys', root_path, class: "logo" %>
+          <%= link_to 'Gamefind', root_path, class: "logo" %>
           <ul class="flex">
             <li><%= link_to 'ゲーム', root_path %></li>
             <li><%= link_to '新規登録', new_customer_registration_path %></li>
