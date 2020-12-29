@@ -7,19 +7,13 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require('jquery')
-require('test.js')
-
-
-
+require('jquery.raty.js')
 
 var jQuery = require('jquery')
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
-import 'jquery/dist/jquery.js'
-import 'popper.js/dist/popper.js'
-import 'bootstrap/dist/js/bootstrap'
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

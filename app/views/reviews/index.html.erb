@@ -3,69 +3,59 @@
     <div class="columns is-centered">
       <div class="column is-5">
         <% @games.each do |game| %>
-        <div class="card mb-6">
+          <div class="card mb-6">
             <header class="card-header">
-              <p class="card-header-title">
+             <p class="card-header-title">
                 <%= game.title %>
               </p>
             </header>
-          <div class="card-content">
-              <div class="content">
-                <div class="content average-score">
-                  <div class="star-rating mb-2">
-                    <div class="star-rating-front" style="width: %">★★★★★</div>
-                    <div class="star-rating-back">★★★★★</div>
-                  </div>
-                  <div class="average-score-display ml-3 pt-2">
+              <div class="card-content">
+                  <div class="content">
+                    <div class="content average-score">
+                      <div class="star-rating mb-2">
+                        <div class="star-rating-front" style="width: %">★★★★★</div>
+                        <div class="star-rating-back">★★★★★</div>
+                      </div>
+                      <div class="average-score-display ml-3 pt-2">
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <footer class="card-footer">
-              <%= form_for(@review, url: game_reviews_path(game.id), method: :post) do |f| %>
-  <!--エラーメッセージ-->
-  <%#= render 'layouts/error_messages', model: f.object %>
-
-
-  <!-- 評価 -->
-  <div class="form-group row" id="star">
-    <%= f.label :score,'評価 ', class:'col-md-3 col-form-label' %>
-    <%= f.hidden_field :score, id: :review_star %>
-  </div>
-
-  <!-- 評価javascript -->
-  <script type="text/javascript">
-  $('#star').raty({
-    size     : 36,
-    starOff:  '<%= asset_path('star_off.png') %>',
-    starOn : '<%= asset_path('star_on.png') %>',
-    starHalf: '<%= asset_path('star_half.png') %>',
-    scoreName: 'review[score]',
-    half: true,
-  });
-  </script>
-
-
-  <!-- 口コミ -->
-  <div class="form-group row">
-    <%= f.label :content, '口コミ内容 ', class:'col-md-3 col-form-label' %>
-    <div class="col-md-9">
-      <%= f.text_area :content, class: "form-control", rows: "8"%>
-    </div>
-  </div>
-
-  <!-- 確認ボタン -->
-  <div class="form-group row justify-content-end">
-    <div class="col-md-9">
-      <%= f.submit '投稿する', class:"btn btn-success" %>
-    </div>
-  </div>
-
-<% end %>
-<!-- /口コミ入力フォーム -->
-
-
-            </footer>
+              <footer class="card-footer">
+                <%= form_for(@review, url: game_reviews_path(game.id), method: :post) do |f| %>
+                  <!--エラーメッセージ-->
+                  <%#= render 'layouts/error_messages', model: f.object %>
+                  <!-- 評価 -->
+                  <div class="form-group row" id="star">
+                    <%= f.label :score,'評価 ', class:'col-md-3 col-form-label' %>
+                    <%= f.hidden_field :score, id: :review_star %>
+                  </div>
+                    <!-- 評価javascript -->
+                    <script type="text/javascript">
+                    $('#star').raty({
+                      size     : 36,
+                      starOff:  '<%= asset_path('star_off.png') %>',
+                      starOn : '<%= asset_path('star_on.png') %>',
+                      starHalf: '<%= asset_path('star_half.png') %>',
+                      scoreName: 'review[score]',
+                      half: true,
+                    });
+                    </script>
+                    <!-- 口コミ -->
+                      <div class="form-group row">
+                        <%= f.label :content, '口コミ内容 ', class:'col-md-3 col-form-label' %>
+                        <div class="col-md-9">
+                          <%= f.text_area :content, class: "form-control", rows: "8"%>
+                        </div>
+                      </div>
+                      <!-- 確認ボタン -->
+                        <div class="form-group row justify-content-end">
+                          <div class="col-md-9">
+                            <%= f.submit '投稿する', class:"btn btn-success" %>
+                          </div>
+                        </div>
+                  <% end %>
+              </footer>
           </div>
         <% end %>
       </div>
