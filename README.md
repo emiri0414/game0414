@@ -50,4 +50,7 @@
 https://user-images.githubusercontent.com/69104912/103174068-6ddc7b80-48a2-11eb-97b1-04d9ce90be3b.png
 ## データベース設計
 https://drive.google.com/file/d/1bfJmXA6_jo6wCxyXIyV01tT5qCiZ2kCw/view?usp=sharing
-
+## ディレクトリ
+https://docs.google.com/spreadsheets/d/17-Yr1uZExnd0o6JYHsZzQTOBezN5kHaLCT6H2qM9rNE/edit?usp=sharing
+## 画面遷移図
+https://drive.google.com/file/d/1lScnRZljIXhjT_x60TCPHog147aV7sN4/view?usp=sharing
